@@ -1,5 +1,5 @@
 [package]
-name = "polars-snowball-stemmer"
+name = "polars_snowball_stemmer"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,9 +8,11 @@ name = "polars_snowball_stemmer"
 crate-type= ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.23.0", features = ["extension-module", "abi3-py39"] }
+polars = { version = "0.46.0", default-features = false } 
+polars-lazy = "0.46.0"
+polars-arrow = "0.46.0"
+pyo3 = { version = "0.23.0", features = ["extension-module"] }
 pyo3-polars = { version = "0.20.0", features = ["derive"] }
+rust-stemmers = "1.2.0"
 serde = { version = "1", features = ["derive"] }
-polars = { version = "0.46.0", default-features = false }
-polars-arrow = { version = "0.46.0", default-features = false }
 

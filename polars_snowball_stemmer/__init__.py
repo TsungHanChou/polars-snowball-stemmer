@@ -13,12 +13,11 @@ if TYPE_CHECKING:
 
 LIB = Path(__file__).parent
 
-
-def pig_latinnify(expr: IntoExprColumn) -> pl.Expr:
+def snowball_stem(expr: IntoExprColumn) -> pl.Expr:
     return register_plugin_function(
         args=[expr],
         plugin_path=LIB,
-        function_name="pig_latinnify",
+        function_name="snowball_stem",
         is_elementwise=True,
     )
 
