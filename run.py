@@ -1,5 +1,5 @@
 import polars as pl
-import polars_snowball_stemmer as stemmer
+from polars_snowball_stemmer import snowball_stem
 
 df = pl.DataFrame({'word': ["fearlessly", "littleness", "lovingly", "devoted"]})
-print(df.with_columns(b=stemmer.snowball_stem('word')))
+print(df.with_columns(b=mp.snowball_stem('word')))
